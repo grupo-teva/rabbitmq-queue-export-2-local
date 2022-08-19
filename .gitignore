@@ -1,1 +1,6 @@
 *.hide
+
+__pycache__/
+
+config.py
+config.sh

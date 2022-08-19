@@ -11,13 +11,14 @@ try:
     dirs = os.listdir(cfg.DATA_PATH)
     for file in dirs:
         print(" [ ] Sending message " + file)
-        in_file = open(cfg.DATA_PATH + '/' + file)
+        in_file = open(cfg.DATA_PATH + '/' + file, "rb")
+        data = in_file.read()
         r.send(cfg.EXCHANGE_NAME,
                cfg.ROUTING_KEY,
                cfg.QUEUE_NAME,
-               in_file.read())
+               data)
     r.close()
-    print(" All text data sent")
+    print(" All binary data sent")
 
 except Exception as e:
     print("Error sending data :(")
