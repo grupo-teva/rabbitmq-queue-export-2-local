@@ -1,6 +1,8 @@
+# rabbitmq-dump-queue container stuff
+RABBIT_DUMP_NAME='rabbitmq-queue-export-1'
 
 # Messages output path
-DATA_PATH='/data'
+DATA_PATH='/rabbit/data'
 
 # Number of messages to export
 MAX_MESSAGES=2000

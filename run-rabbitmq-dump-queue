@@ -1,0 +1,10 @@
+#!/bin/bash
+
+. config.sh
+
+docker rm $RABBIT_DUMP_NAME || true
+
+docker run -it \
+  --name $RABBIT_DUMP_NAME \
+  -v $PWD:/rabbit \
+  rabbitmq-queue-export

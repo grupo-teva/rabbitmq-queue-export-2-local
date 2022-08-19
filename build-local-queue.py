@@ -8,14 +8,17 @@ r = rabbit.Rabbit()
 
 try:
     r.connect()
-    dirs = os.listdir(cfg.DATA_PATH)
-    for file in dirs:
-        print(" [ ] Sending message " + file)
-        in_file = open(cfg.DATA_PATH + '/' + file)
+    entries = os.scandir(cfg.DATA_PATH)
+    for file in entries:
+        if file.name == '.gitignore':
+            continue
+        print(" Sending text message " + file.name)
+        in_file = open(cfg.DATA_PATH + '/' + file.name)
+        data = in_file.read()
         r.send(cfg.EXCHANGE_NAME,
                cfg.ROUTING_KEY,
                cfg.QUEUE_NAME,
-               in_file.read())
+               data)
     r.close()
     print(" All text data sent")
 
