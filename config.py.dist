@@ -1,0 +1,12 @@
+# Messages backup path
+DATA_PATH = 'data'
+
+# RabbitMQ stuff
+RABBIT_HOST = 'rabbit-server'
+RABBIT_PORT = 5672
+USER_NAME = 'guest'
+USER_PASSWD = 'guest'
+VIRTUAL_HOST = '/'
+EXCHANGE_NAME = 'exchange_name'
+QUEUE_NAME = 'queue_name'
+ROUTING_KEY = 'routing_key'

@@ -1,0 +1,17 @@
+# rabbitmq-dump-queue container stuff
+RABBIT_DUMP_NAME='rabbitmq-queue-export-1'
+
+# Messages output path
+DATA_PATH='/rabbit/data'
+
+# Number of messages to export
+MAX_MESSAGES=2000
+
+# RabbitMQ stuff
+RABBIT_NAME='local-rabbitmq'
+RABBIT_HOST='localhost'
+RABBIT_PORT=5672
+RABBIT_MGMT_PORT=15672
+USER_NAME='guest'
+USER_PASSWD='guest'
+QUEUE_NAME='lectura.sicadiz'

@@ -12,15 +12,15 @@ try:
     for file in entries:
         if file.name == '.gitignore':
             continue
-        print(" Sending text message " + file.name)
-        in_file = open(cfg.DATA_PATH + '/' + file.name)
+        print(" Sending binary message " + file.name)
+        in_file = open(cfg.DATA_PATH + '/' + file.name, "rb")
         data = in_file.read()
         r.send(cfg.EXCHANGE_NAME,
                cfg.ROUTING_KEY,
                cfg.QUEUE_NAME,
                data)
     r.close()
-    print(" All text data sent")
+    print(" All binary data sent")
 
 except Exception as e:
     print("Error sending data :(")

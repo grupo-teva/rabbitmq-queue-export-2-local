@@ -1,6 +1,6 @@
 FROM golang:latest
 
-VOLUME ["/data"]
+VOLUME ["/rabbit"]
 
 RUN go install github.com/dubek/rabbitmq-dump-queue@latest
 

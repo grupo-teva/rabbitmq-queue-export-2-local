@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. config.sh
+
+rabbitmq-dump-queue \
+    -uri="amqp://$USER_NAME:$USER_PASSWD@$RABBIT_HOST:$RABBIT_PORT/" \
+    -queue=$QUEUE_NAME \
+    -max-messages=$MAX_MESSAGES \
+    -output-dir=$DATA_PATH
